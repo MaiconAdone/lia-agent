@@ -1,0 +1,62 @@
+# ─── Segurança ─────────────────────────────────
+.env                  # nunca commitar chaves de API!
+
+# ─── Banco de dados SQLite (gerado localmente) ──
+*.db
+*.db-shm
+*.db-wal
+
+# ─── Dataset (arquivos grandes — baixar separado) ──
+base/
+*.csv
+
+# ─── Python ─────────────────────────────────────
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.pdb
+.Python
+*.egg-info/
+dist/
+build/
+.eggs/
+*.egg
+*.whl
+pip-log.txt
+pip-delete-this-directory.txt
+.venv/
+venv/
+env/
+ENV/
+.env.local
+
+# ─── IDEs ───────────────────────────────────────
+.vscode/
+.idea/
+*.swp
+*.swo
+*.suo
+*.user
+.project
+.classpath
+
+# ─── Sistema Operacional ────────────────────────
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# ─── Logs ───────────────────────────────────────
+*.log
+logs/
+
+# ─── Avaliações e artefatos do agent ────────────
+evals/
+artifacts/
+*.jsonl
+*.cache

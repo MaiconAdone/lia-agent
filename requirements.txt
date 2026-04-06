@@ -1,0 +1,6 @@
+anthropic>=0.84.0
+openai>=1.75.0
+streamlit>=1.44.0
+Pillow>=10.0.0
+pytest>=8.0.0
+# stdlib only: csv, sqlite3, json, statistics, re, datetime, os, sys
