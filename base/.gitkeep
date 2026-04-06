@@ -1,0 +1,10 @@
+# Coloque aqui os arquivos CSV do dataset Amazon Books Reviews:
+#
+#   books_data.csv       (~173 MB)
+#   Books_rating.csv     (~2.7 GB)
+#
+# Download gratuito em:
+#   https://www.kaggle.com/datasets/mohamedbakhet/amazon-books-reviews
+#
+# Após colocar os arquivos, execute:
+#   python setup_db.py

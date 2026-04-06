@@ -73,26 +73,64 @@ Criadas automaticamente pelo `setup_db.py` para garantir performance < 200ms:
 
 ## Instalação
 
+### 1. Clonar o repositório
+
+```bash
+git clone https://github.com/MaiconAdone/lia-agent.git
+cd lia-agent
+```
+
+### 2. Instalar dependências
+
 ```bash
 pip install -r requirements.txt
+```
+
+### 3. Configurar variáveis de ambiente
+
+```bash
 copy .env.example .env   # Windows
 # cp .env.example .env   # Linux/macOS
 ```
 
-Edite `.env` com suas chaves de API, depois carregue o banco (execução única, ~10–20 min):
+Edite o arquivo `.env` e preencha com suas chaves de API (veja a seção [Variáveis de Ambiente](#variáveis-de-ambiente)).
+
+### 4. Baixar o dataset
+
+O projeto usa o dataset público **Amazon Books Reviews**, disponível gratuitamente no Kaggle:
+
+**Link:** https://www.kaggle.com/datasets/mohamedbakhet/amazon-books-reviews
+
+Após o download, extraia os dois arquivos CSV e coloque-os na pasta `base/` do projeto:
+
+```
+lia-agent/
+└── base/
+    ├── books_data.csv       # ~173 MB — metadados dos livros
+    └── Books_rating.csv     # ~2.7 GB — avaliações dos leitores
+```
+
+> **Requisitos de espaço:** ~3 GB para os CSVs + ~4 GB para o banco SQLite gerado.
+
+### 5. Criar o banco de dados
+
+Execute **uma única vez** para carregar os CSVs no SQLite e criar todos os índices e tabelas pré-computadas:
 
 ```bash
 python setup_db.py
 ```
 
-### Iniciar
+> Tempo estimado: **10–20 minutos** dependendo do hardware.
+> Ao final, o arquivo `books_analytics.db` (~4 GB) será criado na raiz do projeto.
+
+### 6. Iniciar
 
 ```bash
+# Interface visual (recomendado)
+streamlit run streamlit_app.py
+
 # CLI interativa
 python main.py
-
-# Interface visual (Streamlit)
-streamlit run streamlit_app.py
 ```
 
 ---
